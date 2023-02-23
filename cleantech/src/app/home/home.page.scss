@@ -1,0 +1,192 @@
+ion-content{
+  --background: #f0f0f2;
+
+  .img{
+    --background: black;
+    overflow: hidden;
+    height: 250px;
+    width: 100%;
+    position: relative;
+    .top{
+      margin-top: 40px;
+      margin-right: 20px;
+      margin-left: 20px;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+      .back_div{
+        font-size: 30px;
+        position: relative;
+      }
+    }
+  }
+  .menu{
+    background-color: #f8f8f8;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    border-bottom: 1px solid #ccc;
+    .menuDiv{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      ion-icon{
+        font-size: 28px;
+        color: #EB445A;
+        vertical-align: middle;
+      }
+    }
+  }
+  .ch-menu{
+    margin-top: -20px;
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 200px;
+    p{
+      margin-left: 20px;
+      padding-top: 20px;
+      color: #EB445A;
+      font-size: 18px; 
+      text-align: center;     
+    }
+    .wrapper{
+      border: none;
+      max-width: 100%;
+      display: flex;
+      overflow-x: auto;
+      .item{
+        min-width: 100px;
+        height: auto;
+        position: relative;
+        #imgs{
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          border: 3px solid #fff;
+          outline: 1px solid #EB445A;          
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+    }
+    ion-segment{
+      --background: #f8f8f8;
+      ion-segment-button{
+        --indicator-color: #EB445A;
+        --color-checked:#EB445A;
+        font-weight: bold;
+      }
+    }
+
+  }
+  .content{
+    margin-top: 70px;
+    .overview{
+      span:nth-of-type(1){
+        color: gray;
+        font-size: 12px;
+      }
+      span:nth-of-type(2){
+        color: #EB445A;
+        font-size: 12px;
+      }
+      span:nth-of-type(3){
+        color: #222;
+        font-size: 12px;
+      }
+      .intro{
+        padding: 0px 20px;
+        color: gray;
+        margin-top: -10px;
+        text-align: justify;
+        font-size: 14px;
+        span{
+          color: #EB445A;
+          text-transform: uppercase;
+          font-size: 13px;
+        }
+      }
+      .hrs{
+        padding-left: 10px;
+        margin-top: -20px;        
+        }
+        span{
+          color: gray;
+        }
+        ion-icon{
+          color: red;
+        }
+      }      
+      .address{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+        font-size: 12px;
+        ion-label{
+          color: gray;
+        }
+        h3{
+          font-size: 16px;
+          span{
+            float: right;
+            margin-right: 10px;
+            color: #EB445A;
+          }
+        }
+        .lower-box{
+          .wrapper{
+            max-width: 100%;
+            display: flex;
+            border: none;
+            overflow-x: auto;
+
+            .item{
+              min-width: 110px;
+              height: 110px;
+              line-height: 110px;
+              margin-right: 10px;
+              #imgsc{
+                width: 100%;
+                height: 110px;
+                border-radius: 10px;
+              }
+            }           
+          }
+        }
+      }
+      .services{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        .lower-box{
+          .wrapper{
+            border: none;
+            max-width: 100%;
+            display: flex;
+            overflow-x: auto;
+            .item{
+              min-width: 110px;
+              height: 110px;
+              line-height: 110px;
+              margin-right: 10px;
+              #imgst{
+                width: 100%;
+                height: 110px;
+                border-radius: 10px;
+              }
+            }
+          }
+          .wrapper::-webkit-scrollbar{
+            width: 0px;
+          }
+        }
+      }
+    }    
+  }  

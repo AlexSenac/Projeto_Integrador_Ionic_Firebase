@@ -1,0 +1,30 @@
+.user-image {
+  --size: 100px;
+  margin: auto;
+}
+.photo-wrapper {
+  justify-content: center;
+}
+ion-content {
+  --padding-top: 15px;
+}
+
+ion-title {
+  text-align: center;
+  color: #f3f3f3;
+  font-weight: 600;
+}
+
+.new-background-color {
+  --background: rgb(65, 65, 219);
+}
+
+ion-list {
+  ion-label {
+    padding-left: 10px;
+    margin-bottom: 6px;
+    font-size: 18px;
+    --color: #f00;
+    font-style: italic;
+  }
+}

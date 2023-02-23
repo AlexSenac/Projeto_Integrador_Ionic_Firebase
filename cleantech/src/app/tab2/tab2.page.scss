@@ -1,0 +1,42 @@
+#right {
+  ion-button {
+    float: right;
+    align-items: center;
+    justify-content: end;
+    margin-top: 12px;
+  }
+}
+
+.user-image {
+  --size: 100px;
+  margin: auto;
+  align-items: center;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.photo-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+ion-content {
+  --padding-top: 15px;
+}
+
+ion-title {
+  text-align: center;
+  color: #f3f3f3;
+  font-weight: 600;
+}
+
+.new-background-color {
+  --background: rgb(65, 65, 219);
+}
+
+ion-item {
+  .cor span {
+    color: blue;
+    font-weight: 700;
+  }
+}

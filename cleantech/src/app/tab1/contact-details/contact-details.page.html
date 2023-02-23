@@ -1,0 +1,201 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="new-background-color">
+    <ion-title>Detalhes do Produto </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-thumbnail class="user-image">
+    <img [src]="produtos.imageUrl" *ngIf="produtosFormGroup" alt="" />
+  </ion-thumbnail>
+  <ion-row class="photo-wrapper">
+    <ion-button fill="clear" (click)="uploadImage()">Update Photo</ion-button>
+  </ion-row>
+  <form
+    [formGroup]="produtosFormGroup"
+    *ngIf="produtosFormGroup"
+    #produtosFormGroupDirective="ngForm"
+    (ngSubmit)="editProdutos(produtosFormGroup.value)"
+  >
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nome Produto:</ion-label>
+        <ion-input
+          formControlName="name"
+          id="name"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Tipo:</ion-label>
+        <ion-input
+          formControlName="type"
+          id="type"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Quantidade:</ion-label>
+        <ion-input
+          formControlName="amount"
+          inputmode="number"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Preço de Compra:</ion-label>
+        <ion-input
+          formControlName="purchasePrice"
+          inputmode="number"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label for="" position="stacked">Porcentagem:</ion-label>
+        <ion-input
+          inputmode="number"
+          clearInput="true"
+          formControlName="percentage"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Preço de Venda:</ion-label>
+        <ion-input
+          formControlName="saleValue"
+          inputmode="number"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Fornecedor:</ion-label>
+        <ion-input
+          formControlName="supplier"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input
+          formControlName="email"
+          id="email"
+          inputmode="email"
+          clearInput="true"
+          required
+          email
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">CNPJ:</ion-label>
+        <ion-input
+          formControlName="cnpj"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Telefone:</ion-label>
+        <ion-input
+          formControlName="phone"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">CEP:</ion-label>
+        <ion-input
+          formControlName="cep"
+          id="cep"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Logradouro:</ion-label>
+        <ion-input
+          formControlName="logradouro"
+          id="logradouro"
+          inputmode="text"
+          clearInput="true"
+          required
+          required
+          readonly
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Número:</ion-label>
+        <ion-input
+          formControlName="numero"
+          id="numero"
+          inputmode="number"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Bairro:</ion-label>
+        <ion-input
+          formControlName="bairro"
+          id="bairro"
+          inputmode="text"
+          clearInput="true"
+          required
+          required
+          readonly
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Cidade:</ion-label>
+        <ion-input
+          formControlName="localidade"
+          id="localidade"
+          inputmode="text"
+          clearInput="true"
+          required
+          required
+          readonly
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-buttons slot="start">
+          <ion-button
+            type="submit"
+            style="
+              color: rgb(228, 72, 72);
+              background: #ccc;
+              border-radius: 4px;
+            "
+          >
+            Salvar
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button
+            type="submit"
+            style="
+              background: rgb(228, 72, 72);
+              color: #f3f3f3;
+              border-radius: 4px;
+            "
+            (click)="deleteProdutos('id')"
+          >
+            Delete
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

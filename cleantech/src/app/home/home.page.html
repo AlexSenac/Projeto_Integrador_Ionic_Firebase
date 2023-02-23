@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button> </ion-menu-button>
+      <ion-title></ion-title>
+      <div>
+        <ion-button fill="clear" size="small">
+        <ion-icon name="home" class="ion-padding-end"></ion-icon>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button fill="clear" size="small">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button fill="clear" size="small" (click)="signOut()">
+        <ion-icon name="log-out" class="ion-padding-end"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="perfil()">
+        <ion-icon slot="start" name="person"></ion-icon>
+        {{ displayName }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="img">
+    <div class="top">
+      <div class="back_div">
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="first">
+        <img src="/assets/image/foto01.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="menuDiv">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      <p>Message</p>
+    </div>
+    <div class="menuDiv">
+      <ion-icon name="call"></ion-icon>
+      <p>Call</p>
+    </div>
+    <div class="menuDiv">
+      <ion-icon name="map-outline"></ion-icon>
+      <p>Direction</p>
+    </div>
+    <div class="menuDiv">
+      <ion-icon name="share-outline"></ion-icon>
+      <p>Share</p>
+    </div>
+  </div>
+  <div class="ch-menu">
+    <p>Featured Products</p>
+    <div class="wrapper">
+      <div class="item">
+        <img src="/assets/image/foto03.jpg" alt="">
+        <p>complete baskets 01</p>
+      </div>
+      <div class="item">
+        <img src="/assets/image/foto04.jpg" alt="">
+        <p>complete baskets 02</p>
+      </div>
+      <div class="item">
+        <img src="/assets/image/foto05.jpg" alt="">
+        <p>complete baskets 03</p>
+      </div>
+      <div class="item">
+        <img src="/assets/image/foto06.jpg" alt="">
+        <p>complete baskets 04</p>
+      </div>
+    </div>
+    <ion-segment [value]="segId" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="overview">
+        <ion-label>Company</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="services">
+        <ion-label>cleaning</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="reviews">
+        <ion-label>Reviews</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+    <div class="content">
+      <div class="overview" *ngIf="segId === 'overview'">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="5">
+              <p>About</p>
+            </ion-col>
+            <ion-col size="7">
+              <p class="ion-text-end"><span>Complete Cleanings: </span><span>$20/</span><span>Hour</span></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <hr>
+        <p class="intro">The best world famous organic products. One of the largest cleaning companies and organic products without pesticides. Visit and come check out our offers! Fast delivery. Variety of products. The best fruits and foods and the best cleaning companies on the market. Style and Comfort. Delivery to all Brazil.<span> Read More</span></p>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="5">
+              <p>Hours Available</p>
+            </ion-col>
+            <ion-col size="7">
+              <p class="ion-text-end"><span></span><span>View Details</span></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <hr>
+        <div class="hrs">
+          <ion-label>
+            <ion-icon name="ellipse"></ion-icon><span> Monday - Friday :</span> 08:00am - 18:00pm
+          </ion-label>
+          <br>
+          <ion-label>
+            <ion-icon name="ellipse"></ion-icon><span> Saturday - Monday :</span> 10:00am - 14:00pm
+          </ion-label>
+        </div>
+        <br>
+        <div class="address">
+          <h3>Address</h3>
+          <ion-label>
+            Rua Pompeu Loureiro, 45, Copacabana, Rio de Janeiro-RJ-Brazil.
+          </ion-label>
+          <h3>Photos <span>View All</span></h3>
+          <div class="lower-box">
+            <div class="wrapper">
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto08.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto05.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto03.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto04.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto06.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgsc" src="/assets/image/foto03.jpg" alt="">
+
+              </div>
+            </div>
+            </div>
+            <ion-button expand="block" (click)="goToEvent()" color="primary">Clean and Organics</ion-button>
+          </div>
+        </div>
+        <div class="services" *ngIf="segId === 'services'">
+          <div class="lower-box">
+            <div class="wrapper">
+              <div class="item">
+                <img id="imgst" src="/assets/image/foto02.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgst" src="/assets/image/foto07.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgst" src="/assets/image/foto02.jpg" alt="">
+
+              </div>
+              <div class="item">
+                <img id="imgst" src="/assets/image/foto07.jpg" alt="">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</ion-content>

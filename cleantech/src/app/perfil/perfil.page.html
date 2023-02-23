@@ -1,0 +1,77 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="end">
+      <ion-button (click)="signOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="perfil()">
+        <ion-icon slot="start" name="person"></ion-icon>
+        {{ displayName }}
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Perfil de Funcionários </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-thumbnail class="user-image" (click)="changeImage()">
+    <img *ngIf="imageURL else placeholder_profile;" [src]="imageURL" alt="" />
+  </ion-thumbnail>
+  <ng-template #placeholder_profile>
+    <div>
+      <p>Upload Profile</p>
+    </div>
+  </ng-template>
+  <form
+    [formGroup]="perfilFormGroup"
+    *ngIf="perfilFormGroup"
+    #perfilFormGroupDirective="ngForm"
+    (ngSubmit)="update()"
+  >
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Perfil:</ion-label>
+        <ion-input
+          formControlName="name"
+          id="name"
+          inputmode="text"
+          clearInput="true"
+          required
+        ></ion-input>
+      </ion-item>
+      <div
+        *ngIf="perfilFormGroup.get('name')?.hasError('required') && perfilFormGroup.get('name')?.touched"
+      >
+        <i style="color: red">Campo não pode estar vazio.</i>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input
+          formControlName="email"
+          id="email"
+          inputmode="email"
+          clearInput="false"
+          [disabled]="true"
+          [readonly]="true"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-buttons>
+          <ion-button
+            style="
+              background: rgb(228, 72, 72);
+              color: #f3f3f3;
+              border-radius: 4px;
+            "
+            type="submit"
+            [disabled]="!perfilFormGroup.valid"
+            >Salvar</ion-button
+          >
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
